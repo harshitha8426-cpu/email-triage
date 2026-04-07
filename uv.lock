@@ -4,29 +4,169 @@ requires-python = ">=3.10"
 [[package]]
 name = "fastapi"
 version = "0.100.0"
-dependencies = []
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "starlette" },
+]
+wheels = [
+    { filename = "fastapi-0.100.0-py3-none-any.whl", hash = "sha256:a4c2010a7ee28a42ecc543fd33b68ca0e69a238ba4cd39dff6a6ad5fbbd01bad" },
+]
 
 [[package]]
 name = "uvicorn"
 version = "0.23.0"
-dependencies = []
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "click" },
+]
+wheels = [
+    { filename = "uvicorn-0.23.0-py3-none-any.whl", hash = "sha256:1f9be7fb6e429ef129f90f0055fcc35c41f761f4f92928f77a3cbc10a65180a9d" },
+]
 
 [[package]]
 name = "pydantic"
 version = "2.0.0"
-dependencies = []
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+wheels = [
+    { filename = "pydantic-2.0.0-py3-none-any.whl", hash = "sha256:69ffd253e15511f37d7d2c8d7a99e1cb92c38a9d4ee8c8f80d85f19e59c7fffe" },
+]
 
 [[package]]
 name = "requests"
 version = "2.31.0"
-dependencies = []
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "charset-normalizer" },
+    { name = "idna" },
+    { name = "urllib3" },
+    { name = "certifi" },
+]
+wheels = [
+    { filename = "requests-2.31.0-py3-none-any.whl", hash = "sha256:c62aae35a73be8d09ac88e7c61d480951c0ba1bc4723b8d0e039253b98e1c256" },
+]
 
 [[package]]
 name = "openai"
 version = "1.0.0"
-dependencies = []
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "requests" },
+    { name = "typing-extensions" },
+]
+wheels = [
+    { filename = "openai-1.0.0-py3-none-any.whl", hash = "sha256:8b3e2c6cb2c3c0c5c7f8f0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0" },
+]
 
 [[package]]
 name = "openenv-core"
 version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = []
+wheels = [
+    { filename = "openenv_core-0.2.0-py3-none-any.whl", hash = "sha256:a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f" },
+]
+
+[[package]]
+name = "starlette"
+version = "0.27.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+wheels = [
+    { filename = "starlette-0.27.0-py3-none-any.whl", hash = "sha256:c6e0ac21cc8a5356eb7f35b69f45231b061b52749b7690dc68141f748e195bccf" },
+]
+
+[[package]]
+name = "typing-extensions"
+version = "4.7.1"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "typing_extensions-4.7.1-py3-none-any.whl", hash = "sha256:440d5dd3af93b060174bf433bccd68f8af93357cebf600d63a738d1aa4e63f77a" },
+]
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "click-8.1.7-py3-none-any.whl", hash = "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28" },
+]
+
+[[package]]
+name = "charset-normalizer"
+version = "3.2.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "charset_normalizer-3.2.0-py3-none-any.whl", hash = "sha256:942c5a758f98d790eaa1b8b3e1d85d8b61dbee56fbaebf9d3159d02d2651fe8f" },
+]
+
+[[package]]
+name = "idna"
+version = "3.4"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "idna-3.4-py3-none-any.whl", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd5a32c9b57770d07265c42" },
+]
+
+[[package]]
+name = "urllib3"
+version = "2.0.4"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "urllib3-2.0.4-py3-none-any.whl", hash = "sha256:de7df1803967d2c7a1b50a926986dead855b6ee02e1ba48f9296ecd89f526cb0f" },
+]
+
+[[package]]
+name = "certifi"
+version = "2023.7.22"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "certifi-2023.7.22-py3-none-any.whl", hash = "sha256:996d8b169f84c9b53e30436681386ca91b4271635931f7ec01cd2923fbd2f565d" },
+]
+
+[[package]]
+name = "aiohttp"
+version = "3.8.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "async-timeout" },
+    { name = "multidict" },
+    { name = "yarl" },
+]
+wheels = [
+    { filename = "aiohttp-3.8.5-py3-none-any.whl", hash = "sha256:473961b4a846b97c45cbf0c742e32dfa5a456d13761f77ec4f4f0b7a0b322a6d" },
+]
+
+[[package]]
+name = "async-timeout"
+version = "4.0.2"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "async_timeout-4.0.2-py3-none-any.whl", hash = "sha256:8ca1e4877f0b248e39d4de061a364a74fc8ea4ef0ea08bcc23f82989e6a4225f7" },
+]
+
+[[package]]
+name = "multidict"
+version = "6.0.4"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { filename = "multidict-6.0.4-py3-none-any.whl", hash = "sha256:c8d6a5f56e882b12116c4a02108d37cc2249cbf2236787145c652df79421e46ea" },
+]
+
+[[package]]
+name = "yarl"
+version = "1.9.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "idna" },
+    { name = "multidict" },
+]
+wheels = [
+    { filename = "yarl-1.9.2-py3-none-any.whl", hash = "sha256:0ed2b7410235e1c09c89f64b189749e37dd0cf21902e118c72765eb5e4c0330b" },
+]
