@@ -3,7 +3,7 @@ requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openenv"
+name = "email triage"
 version = "1.0.0"
 description = "Email Triage & Routing with OpenEnv Simulation"
 readme = "README.md"
@@ -37,8 +37,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/openenv/openenv"
-Documentation = "https://github.com/openenv/openenv#readme"
+Homepage = "https://github.com/harshitha8426-cpu/email-triage"
+Documentation = "https://github.com/harshitha8426-cpu/email-triage/blob/main/README.md"
 
 [tool.setuptools]
 packages = ["openenv"]
