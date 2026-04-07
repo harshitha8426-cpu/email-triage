@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import uvicorn
 
 from models import Action, Observation, Reward, State
@@ -19,9 +19,10 @@ class StepResponse(BaseModel):
     info: Dict[str, Any]
 
 @app.post("/reset", response_model=Observation)
-async def reset(req: ResetRequest):
+async def reset(req: Optional[ResetRequest] = None):
+    task_id = req.task_id if req else "easy"
     try:
-        return env.reset(task_id=req.task_id)
+        return env.reset(task_id=task_id)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
