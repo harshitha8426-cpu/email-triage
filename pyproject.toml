@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.scripts]
-email-triage-server = "server.app:app"
+server = "server.app:app"
 
 [project.optional-dependencies]
 dev = [
