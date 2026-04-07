@@ -40,6 +40,6 @@ uvicorn server:app --host 0.0.0.0 --port 8000
 ### 3. Running Baseline
 Runs a zero-shot LLM (requires `OPENAI_API_KEY`) against the three tasks.
 ```bash
-export OPENAI_API_KEY="your-sk-key"
+
 python baseline.py
 ```
