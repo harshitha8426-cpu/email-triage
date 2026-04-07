@@ -1,0 +1,32 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "fastapi"
+version = "0.100.0"
+dependencies = []
+
+[[package]]
+name = "uvicorn"
+version = "0.23.0"
+dependencies = []
+
+[[package]]
+name = "pydantic"
+version = "2.0.0"
+dependencies = []
+
+[[package]]
+name = "requests"
+version = "2.31.0"
+dependencies = []
+
+[[package]]
+name = "openai"
+version = "1.0.0"
+dependencies = []
+
+[[package]]
+name = "openenv-core"
+version = "0.2.0"
+dependencies = []
