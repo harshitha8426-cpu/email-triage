@@ -1,0 +1,10 @@
+name: "email-triage-env"
+description: "A real-world OpenEnv simulation for enterprise email triage and routing. The agent must read incoming emails and properly archive, forward, or reply based on company policies."
+version: "1.0.0"
+tasks:
+  - id: "easy"
+    description: "Triage 3 distinct emails (spam and clear-cut forwards) with perfect routing."
+  - id: "medium"
+    description: "Triage 5 emails including vendor inquiries requiring standard replies based on policy."
+  - id: "hard"
+    description: "Triage 10 mixed emails with complex escalations, phishing traps, and policy lookups."
