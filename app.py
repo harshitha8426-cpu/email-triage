@@ -40,5 +40,9 @@ async def step(action: Action):
 async def state():
     return env.state()
 
-if __name__ == "__main__":
+def main():
+    """Entry point for the application"""
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+if __name__ == "__main__":
+    main()
