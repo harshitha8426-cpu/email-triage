@@ -3,9 +3,9 @@ requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openenv"
+name = "email-triage"
 version = "1.0.0"
-description = "Email Triage & Routing with OpenEnv Simulation"
+description = "Email Triage - Enterprise Email Management"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.scripts]
-openenv-server = "server.app:app"
+email-triage-server = "server.app:app"
 
 [project.optional-dependencies]
 dev = [
