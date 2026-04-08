@@ -1,7 +1,14 @@
 """
-Email Triage Server - FastAPI Application
-Handles email triage tasks with OpenEnv Interface
+server/app.py
+Required for OpenEnv multi-mode deployment validation.
+Upload this file inside a 'server/' folder in your HuggingFace Space repo.
 """
+
+import sys
+import os
+
+# Ensure repo root is importable inside Docker
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -21,10 +28,13 @@ app = FastAPI(
 # Initialize environment
 env = EmailTriageEnv()
 
-# Request/Response Models
+
+# ── Request / Response Models ─────────────────────────────────────────────────
+
 class ResetRequest(BaseModel):
     """Reset request body"""
     task_id: str = "easy"
+
 
 class StepResponse(BaseModel):
     """Step response body"""
@@ -33,15 +43,17 @@ class StepResponse(BaseModel):
     done: bool
     info: Dict[str, Any]
 
-# API Routes
+
+# ── API Routes ────────────────────────────────────────────────────────────────
+
 @app.post("/reset", response_model=Observation, tags=["operations"])
 async def reset(req: Optional[ResetRequest] = None):
     """
-    Reset the environment and start a new episode
-    
+    Reset the environment and start a new episode.
+
     Args:
         req: ResetRequest with optional task_id ("easy", "medium", "hard")
-        
+
     Returns:
         Observation: Initial observation for the episode
     """
@@ -51,14 +63,15 @@ async def reset(req: Optional[ResetRequest] = None):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+
 @app.post("/step", response_model=StepResponse, tags=["operations"])
 async def step(action: Action):
     """
-    Execute an action in the environment
-    
+    Execute an action in the environment.
+
     Args:
         action: Action to take (archive, forward, or reply)
-        
+
     Returns:
         StepResponse: Observation, reward, done flag, and info
     """
@@ -70,23 +83,25 @@ async def step(action: Action):
         info=info
     )
 
+
 @app.get("/state", response_model=State, tags=["operations"])
 async def state():
     """
-    Get current environment state
-    
+    Get current environment state.
+
     Returns:
         State: Current state including emails processed, total, and task
     """
     return env.state()
+
 
 @app.get("/health", tags=["health"])
 async def health():
     """Health check endpoint"""
     return {"status": "healthy", "service": "email-triage-server"}
 
+
 def main():
-    """Entry point for the application"""
     uvicorn.run(
         app,
         host="0.0.0.0",
@@ -94,6 +109,7 @@ def main():
         log_level="info",
         access_log=True
     )
+
 
 if __name__ == "__main__":
     main()
